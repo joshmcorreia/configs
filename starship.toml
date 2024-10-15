@@ -4,6 +4,7 @@ format = """
 [](color_orange)\
 $os\
 $username\
+$sudo\
 $hostname\
 [](bg:color_yellow fg:color_orange)\
 $directory\
@@ -69,6 +70,12 @@ CentOS = ""
 Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
+
+[sudo]
+disabled = false
+format = "[$symbol]($style)"
+symbol ="🧙"
+style = "bg:color_orange fg:color_fg0"
 
 [username]
 show_always = true
