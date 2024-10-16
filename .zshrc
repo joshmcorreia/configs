@@ -3,6 +3,8 @@ alias grep='grep --color=auto'
 # if `eza` is installed then replace `ls` with `eza`
 if [ -x "$(command -v eza)" ]; then
     alias ls='eza'
+else
+    alias ls='ls --color=auto'
 fi
 
 alias ll='ls -la'
