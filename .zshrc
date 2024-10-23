@@ -34,7 +34,8 @@ export GREP_COLORS='ms=01;31'
 # https://stackoverflow.com/a/20277787
 mem()
 {
-    ps -eo rss,pid,euser,args:100 --sort %mem | grep -v grep | grep -i $@ | awk '{printf $1/1024 "MB"; $1=""; print }'
+    # per https://man7.org/linux/man-pages/man1/ps.1.html, `rss` gives us the non-swapped physical memory that a task has used in kibibytes (1KiB = 2^10)
+    ps -eo rss,pid,euser,args:100 --sort %mem | grep -v grep | grep -i $@ | awk '{printf $1/1024 "MiB"; $1=""; print }'
 }
 
 if [ -x "$(command -v starship)" ]; then
