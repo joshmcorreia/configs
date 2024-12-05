@@ -42,7 +42,7 @@ if [ -x "$(command -v starship)" ]; then
     eval "$(starship init zsh)"
 fi
 
-if [ -x "$(command -v atuin)" ]; then
+if [ -f "$HOME/.atuin/bin/atuin" ]; then
     . "$HOME/.atuin/bin/env"
     eval "$(atuin init zsh)"
 fi
