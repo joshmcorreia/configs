@@ -14,6 +14,10 @@ alias size='du -sh'
 alias sui='sudo -i'
 alias untar='tar -xzf'
 
+# podman aliases
+alias pcl="podman container ls -a"
+alias pil="podman image ls -a"
+
 # ignores duplicated history entries when pressing up/down in terminal
 setopt histignoredups
 #set history size
