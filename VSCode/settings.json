@@ -14,6 +14,7 @@
     "workbench.editorLargeFileConfirmation": 100,
     "workbench.startupEditor": "none", // disable the welcome page
     "scm.alwaysShowActions": true,
+    "window.confirmSaveUntitledWorkspace": false,
 
     // git
     "git.openDiffOnClick": true,
@@ -58,9 +59,12 @@
     "gitlens.statusBar.enabled": false,
     "gitlens.hovers.enabled": false,
 
-    // Markdown Preview Github Styling (by Matt Bierner) extension
+    // "Markdown Preview Github Styling" extension (by Matt Bierner)
     "markdown-preview-github-styles.colorTheme": "light",
 
-    // Markdown PDF (by yzane) extension
+    // "Markdown PDF" extension (by yzane)
     "markdown-pdf.displayHeaderFooter": false,
+
+    // "Remote - SSH" extension (by Microsoft)
+    "remote.SSH.enableDynamicForwarding": false,
 }
