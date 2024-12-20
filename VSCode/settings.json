@@ -5,7 +5,7 @@
     "editor.fontSize": 14,
     "editor.bracketPairColorization.enabled": true,
     "editor.minimap.enabled": false,
-    "editor.fontFamily": "Cascadia Code",
+    "editor.fontFamily": "CaskaydiaCove Nerd Font",
     "editor.stickyScroll.enabled": false, // get rid of the sticky window on top that shows where the block begins
 
     "python.analysis.autoImportCompletions": false,
@@ -25,7 +25,7 @@
 
     // terminal
     "terminal.integrated.scrollback": 10000, // use the same font as the code
-    "terminal.integrated.fontFamily": "Cascadia Code",
+    "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
     "terminal.integrated.hideOnStartup": "always", // hide the terminal when starting a new window
 
     "workbench.colorCustomizations" : {
