@@ -22,6 +22,7 @@
     "git.showInlineOpenFileAction": true,
     "git.ignoreRebaseWarning": true,
     "git.replaceTagsWhenPull": true,
+    "git.confirmSync": false,
 
     // terminal
     "terminal.integrated.scrollback": 10000, // use the same font as the code
