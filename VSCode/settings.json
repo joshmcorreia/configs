@@ -15,6 +15,7 @@
     "workbench.startupEditor": "none", // disable the welcome page
     "scm.alwaysShowActions": true,
     "window.confirmSaveUntitledWorkspace": false,
+    "chat.commandCenter.enabled": false, // disable CoPilot
 
     // git
     "git.openDiffOnClick": true,
