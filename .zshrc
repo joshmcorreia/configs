@@ -51,18 +51,21 @@ if [ -f "$HOME/.atuin/bin/atuin" ]; then
     eval "$(atuin init zsh)"
 fi
 
-# if `zellij` is installed then run it by default when a terminal is started
-if [ -x "$(command -v zellij)" ]; then
-    # output of `zellij setup --generate-auto-start zsh`
-    if [[ -z "$ZELLIJ" ]]; then
-        if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
-            zellij attach -c
-        else
-            zellij
-        fi
+# don't open zellij in VSCode, otherwise we end up with a ton of sessions
+if [ "$TERM_PROGRAM" != "vscode" ]; then
+    # if `zellij` is installed then run it by default when a terminal is started
+    if [ -x "$(command -v zellij)" ]; then
+        # output of `zellij setup --generate-auto-start zsh`
+        if [[ -z "$ZELLIJ" ]]; then
+            if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+                zellij attach -c
+            else
+                zellij
+            fi
 
-        if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
-            exit
+            if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
+                exit
+            fi
         fi
     fi
 fi
