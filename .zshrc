@@ -69,3 +69,7 @@ if [ ! -n "$VSCODE_PID" ]; then
         fi
     fi
 fi
+
+# enable SSH autocomplete
+autoload -Uz compinit
+compinit
