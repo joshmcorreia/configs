@@ -52,7 +52,7 @@ if [ -f "$HOME/.atuin/bin/atuin" ]; then
 fi
 
 # don't open zellij in VSCode, otherwise we end up with a ton of sessions
-if [ "$TERM_PROGRAM" != "vscode" ]; then
+if [ ! -n "$VSCODE_PID" ]; then
     # if `zellij` is installed then run it by default when a terminal is started
     if [ -x "$(command -v zellij)" ]; then
         # output of `zellij setup --generate-auto-start zsh`
