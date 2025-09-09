@@ -51,8 +51,10 @@ if [ -f "$HOME/.atuin/bin/atuin" ]; then
     eval "$(atuin init zsh)"
 fi
 
-# don't open zellij in VSCode, otherwise we end up with a ton of sessions
-if [ ! -n "$VSCODE_PID" ]; then
+# This comparison seems to work on MacOS: `! -n "$VSCODE_PID"`
+# This comparison works on Windows 11 w/ WSL: `"$TERM_PROGRAM" != "vscode"`
+# Don't open zellij in VSCode, otherwise we end up with a ton of sessions
+if [[ ! -n "$VSCODE_PID" && "$TERM_PROGRAM" != "vscode" ]]; then
     # if `zellij` is installed then run it by default when a terminal is started
     if [ -x "$(command -v zellij)" ]; then
         # output of `zellij setup --generate-auto-start zsh`
