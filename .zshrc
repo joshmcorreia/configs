@@ -13,6 +13,7 @@ alias pubip='curl icanhazip.com'
 alias size='du -sh'
 alias sui='sudo -i'
 alias untar='tar -xzf'
+alias zj="zellij"
 
 # podman aliases
 alias pcl="podman container ls -a"
