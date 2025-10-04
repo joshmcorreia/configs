@@ -69,4 +69,5 @@
 
     // "Remote - SSH" extension (by Microsoft)
     "remote.SSH.enableDynamicForwarding": false,
+    "chat.disableAIFeatures": true,
 }
