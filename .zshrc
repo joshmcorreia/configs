@@ -54,8 +54,9 @@ fi
 
 # This comparison seems to work on MacOS: `! -n "$VSCODE_PID"`
 # This comparison works on Windows 11 w/ WSL: `"$TERM_PROGRAM" != "vscode"`
+# For some reason, $TERM_PROGRAM is not always set, so we need to check $VSCODE_CWD as well
 # Don't open zellij in VSCode, otherwise we end up with a ton of sessions
-if [[ ! -n "$VSCODE_PID" && "$TERM_PROGRAM" != "vscode" ]]; then
+if [[ ! -n "$VSCODE_PID" && ! -n "$VSCODE_CWD" && "$TERM_PROGRAM" != "vscode" ]]; then
     # if `zellij` is installed then run it by default when a terminal is started
     if [ -x "$(command -v zellij)" ]; then
         # output of `zellij setup --generate-auto-start zsh`
