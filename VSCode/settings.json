@@ -69,5 +69,8 @@
 
     // "Remote - SSH" extension (by Microsoft)
     "remote.SSH.enableDynamicForwarding": false,
+    // Specifically for being able to remote into systems with VSCode using SSH keys from WSL
+    // See https://stackoverflow.com/a/66048792
+    "remote.SSH.path": "C:\\Users\\Josh\\ssh.bat",
     "chat.disableAIFeatures": true,
 }
