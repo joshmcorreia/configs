@@ -50,6 +50,14 @@
         "editor.detectIndentation":false,
         "editor.rulers": [100],
     },
+    "[shellscript]": {
+        "editor.rulers": [80],
+    },
+
+    "files.associations": {
+        "*.inc": "shellscript",
+        "*.ks": "shellscript",
+    },
 
     // explorer (left panel)
     "explorer.compactFolders": false, // compact folders make it hard to see nested folders
