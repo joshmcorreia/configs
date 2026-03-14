@@ -77,3 +77,9 @@ fi
 # enable SSH autocomplete
 autoload -Uz compinit
 compinit
+
+# WSL2 doesn't start an ssh-agent by default, this fixes that
+export SSH_AUTH_SOCK="$HOME/.ssh/ssh_auth_sock"
+if [ ! -S "$SSH_AUTH_SOCK" ]; then
+    eval "$(ssh-agent -a $SSH_AUTH_SOCK)"
+fi
