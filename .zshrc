@@ -80,6 +80,12 @@ compinit
 
 # WSL2 doesn't start an ssh-agent by default, this fixes that
 export SSH_AUTH_SOCK="$HOME/.ssh/ssh_auth_sock"
-if [ ! -S "$SSH_AUTH_SOCK" ]; then
-    eval "$(ssh-agent -a $SSH_AUTH_SOCK)"
+# Start agent if not running or socket is stale
+if ! ssh-add -l >/dev/null 2>&1; then
+    rm -f "$SSH_AUTH_SOCK"
+    eval "$(ssh-agent -a $SSH_AUTH_SOCK)" >/dev/null
 fi
+# Add keys if none are loaded
+ssh-add -l >/dev/null 2>&1 || {
+    ssh-add ~/.ssh/id_ed25519
+}
