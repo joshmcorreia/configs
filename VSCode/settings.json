@@ -49,6 +49,8 @@
         "editor.insertSpaces": true,
         "editor.detectIndentation":false,
         "editor.rulers": [100],
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true,
     },
     "[shellscript]": {
         "editor.rulers": [80],
