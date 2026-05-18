@@ -74,7 +74,7 @@ if [[ ! -n "$VSCODE_PID" && ! -n "$VSCODE_CWD" && "$TERM_PROGRAM" != "vscode" ]]
     fi
 fi
 
-# enable SSH autocomplete
+# enable tab auto-completion
 autoload -Uz compinit
 compinit
 
