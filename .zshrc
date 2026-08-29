@@ -47,6 +47,7 @@ if [ -x "$(command -v starship)" ]; then
     eval "$(starship init zsh)"
 fi
 
+# Start atuin (This is where it's located when running the atuin installer shell script)
 if [ -f "$HOME/.atuin/bin/atuin" ]; then
     . "$HOME/.atuin/bin/env"
     eval "$(atuin init zsh)"
@@ -62,13 +63,11 @@ if [[ ! -n "$VSCODE_PID" && ! -n "$VSCODE_CWD" && "$TERM_PROGRAM" != "vscode" ]]
         # output of `zellij setup --generate-auto-start zsh`
         if [[ -z "$ZELLIJ" ]]; then
             if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
-                zellij attach -c
+                # exec makes it so that zellij replaces the shell process and
+                # we don't have to exit another terminal after exiting
+                exec zellij attach -c
             else
-                zellij
-            fi
-
-            if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
-                exit
+                exec zellij
             fi
         fi
     fi
